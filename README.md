@@ -1,54 +1,11 @@
-const flashcards = [
-    {
-        question: "Qual filme é conhecido pela frase 'Eu vejo gente morta'?",
-        answer: "O Sexto Sentido (1999)",
-        info: "Um thriller psicológico que mistura elementos sobrenaturais com uma reviravolta chocante no final. Dirigido por M. Night Shyamalan."
-    },
-    // ... (demais flashcards)
-];
+Flashcards de Terror:
+Este é um projeto desenvolvido para praticar conceitos de HTML, CSS e JavaScript, criando um jogo interativo de flashcards com o tema "Filmes de Terror". O objetivo é testar seus conhecimentos sobre filmes clássicos e contemporâneos de terror de maneira divertida e visualmente imersiva.
 
-let currentCardIndex = 0;
-
-const flashcardContainer = document.getElementById('flashcard-container');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-
-function createFlashcard(cardData) {
-    const flashcard = document.createElement('div');
-    flashcard.classList.add('flashcard');
-    flashcard.innerHTML = `
-        <div class="flashcard-inner">
-            <div class="flashcard-front">
-                <p>${cardData.question}</p>
-            </div>
-            <div class="flashcard-back">
-                <p><strong>Resposta:</strong> ${cardData.answer}</p>
-                <p><strong>Info:</strong> ${cardData.info}</p>
-            </div>
-        </div>
-    `;
-
-    flashcard.addEventListener('click', () => {
-        flashcard.classList.toggle('flipped');
-    });
-
-    return flashcard;
-}
-
-function displayCard(index) {
-    flashcardContainer.innerHTML = '';
-    const card = createFlashcard(flashcards[index]);
-    flashcardContainer.appendChild(card);
-}
-
-nextBtn.addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex + 1) % flashcards.length;
-    displayCard(currentCardIndex);
-});
-
-prevBtn.addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
-    displayCard(currentCardIndex);
-});
-
-displayCard(currentCardIndex);
+Como funciona:
+O projeto apresenta cartões de perguntas (flashcards) relacionados a filmes de terror.
+Ao clicar em um cartão, ele "vira", mostrando a resposta correta e uma curiosidade sobre o filme.
+Você pode navegar entre os flashcards usando os botões "Anterior" e "Próximo".
+Tecnologias utilizadas
+HTML: Estrutura da página e dos elementos do jogo.
+CSS: Estilização avançada, com tema sombrio e efeitos de "terror".
+JavaScript: Lógica de interação dos flashcards, navegação e animações.
